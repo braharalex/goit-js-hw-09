@@ -21,12 +21,12 @@ flatpickr('input#datetime-picker', {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log();
     if (selectedDates[0] - Date.now() <= 60000) {
       Notify.failure('Please choose a date in the future');
       refs.StartBtn.disabled = true;
       return;
     }
+
     refs.StartBtn.disabled = false;
   },
 });
